@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>春满四合院-重温经典四合院情怀与生活指南</title>
+    <meta name="description" content="春满四合院，带你走进充满温情的传统院落生活。了解四合院的历史文化、建筑格局、现代改造案例以及居住其中的人文故事，感受春意盎然的庭院时光。">
+    <meta name="keywords" content="春满四合院,四合院文化,老北京院子,庭院生活,四合院改造,传统建筑">
+    <style>
+        /* 全局基础样式 */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+            background-color: #faf6f0;  /* 暖灰底色，呼应院墙质感 */
+            color: #2c2a26;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /* 顶部品牌栏 */
+        .site-header {
+            background: #3e2f1c; /* 深木色，沉稳庄重 */
+            padding: 16px 0;
+            border-bottom: 5px solid #b58d5a;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #ffe6b3;
+            letter-spacing: 2px;
+            font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+            text-shadow: 1px 1px 0 #00000033;
+        }
+        .logo-area p {
+            color: #d8c6a8;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+        .header-info {
+            color: #e9dbc4;
+            font-size: 0.9rem;
+            background: #4f3d26;
+            padding: 6px 14px;
+            border-radius: 30px;
+            border: 1px solid #b58d5a55;
+        }
+
+        /* 主导航 */
+        .main-nav {
+            background: #fefcf8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-bottom: 1px solid #e0d5c5;
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-list li a {
+            display: block;
+            padding: 14px 22px;
+            font-weight: 600;
+            color: #4a3e2e;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
+        }
+        .nav-list li a:hover,
+        .nav-list li.active a {
+            color: #9c6b2f;
+            border-bottom-color: #b58d5a;
+            background: #fff8ef;
+        }
+
+        /* 首屏 hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #f3e9d2 0%, #e7d6b8 100%);
+            padding: 60px 0 50px;
+            position: relative;
+            border-bottom: 1px solid #d6c39e;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 30" preserveAspectRatio="none"><path d="M0,30 L0,15 Q30,0 60,15 T120,15 T180,15 T240,15 T300,15 T360,15 T420,15 T480,15 T540,15 T600,15 T660,15 T720,15 T780,15 T840,15 T900,15 T960,15 T1020,15 T1080,15 T1140,15 T1200,15 L1200,30 Z" fill="%23faf6f0"/></svg>');
+            background-size: cover;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero-text h2 {
+            font-size: 2.4rem;
+            font-family: "Noto Serif SC", "Songti SC", serif;
+            color: #3c2d1c;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            border-left: 6px solid #b58d5a;
+            padding-left: 20px;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #4d3f2b;
+            margin-bottom: 28px;
+            max-width: 600px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: #3e2f1c;
+            color: #f3e7d3;
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            border: 1px solid #b58d5a66;
+            margin-right: 12px;
+            margin-bottom: 8px;
+        }
+        .hero-illus {
+            background: #e2d0b0;
+            border-radius: 20px;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+            background-image: radial-gradient(circle at 20% 30%, #c2a57a 0%, transparent 30%),
+                              linear-gradient(145deg, #dac8a9, #c9b18b);
+            border: 1px solid #bd9e73;
+            color: #4a3520;
+            font-size: 1.2rem;
+            font-family: "Noto Serif SC", serif;
+            letter-spacing: 3px;
+            flex-direction: column;
+            gap: 6px;
+            font-weight: 600;
+        }
+        .hero-illus span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        /* 内容卡片通用 */
+        .section-title {
+            font-size: 1.7rem;
+            font-family: "Noto Serif SC", "Songti SC", serif;
+            color: #3e2f1c;
+            margin: 40px 0 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::before {
+            content: "";
+            width: 28px;
+            height: 4px;
+            background: #b58d5a;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        .section-sub {
+            color: #6b5c48;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        .card {
+            background: #fffdf9;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+            border: 1px solid #ece2d2;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.07);
+        }
+        .card-img {
+            height: 160px;
+            background: linear-gradient(145deg, #d9c7ac, #c7ae89);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Noto Serif SC", serif;
+            color: #3a2d18;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #c2a77e;
+        }
+        .card-content {
+            padding: 20px 18px 24px;
+        }
+        .card-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: #3a2d1c;
+            font-family: "Noto Serif SC", "Songti SC", serif;
+        }
+        .card-content p {
+            font-size: 0.92rem;
+            color: #5e5240;
+            margin-bottom: 12px;
+        }
+        .card-tag {
+            display: inline-block;
+            background: #f1e7d9;
+            color: #7a623f;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+
+        /* 特色板块 */
+        .feature-panel {
+            background: #fffaf2;
+            border-radius: 28px;
+            padding: 40px;
+            border: 1px solid #e8d9c2;
+            margin: 40px 0;
+        }
+        .feature-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        .feature-flex .text-side {
+            flex: 1 1 300px;
+        }
+        .feature-flex .text-side h2 {
+            font-family: "Noto Serif SC", serif;
+            font-size: 1.8rem;
+            color: #3c2c1a;
+            margin-bottom: 16px;
+        }
+        .feature-flex .text-side p {
+            margin-bottom: 16px;
+            color: #4e4232;
+        }
+        .feature-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #d8c5a4;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #4d3f2b;
+        }
+        .feature-list li::before {
+            content: "🌿";
+            font-size: 1rem;
+            width: 22px;
+        }
+        .feature-flex .illus-side {
+            flex: 0 0 280px;
+            background: #e5d5bc;
+            border-radius: 20px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Noto Serif SC", serif;
+            color: #4e3a20;
+            box-shadow: inset 0 0 0 2px #ffffff66;
+            font-size: 1.2rem;
+            letter-spacing: 6px;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            background-image: linear-gradient(#00000008 1px, transparent 1px), linear-gradient(90deg, #00000008 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* 故事/文章列表 */
+        .story-list {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+            border: 1px solid #e7dccb;
+        }
+        .story-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #ece1d0;
+            flex-wrap: wrap;
+        }
+        .story-item:last-child {
+            border-bottom: none;
+        }
+        .story-date {
+            background: #f2e6d6;
+            color: #8a6d45;
+            font-weight: 600;
+            border-radius: 30px;
+            padding: 4px 14px;
+            font-size: 0.85rem;
+            height: fit-content;
+        }
+        .story-info {
+            flex: 1;
+            min-width: 220px;
+        }
+        .story-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #33291b;
+        }
+        .story-info p {
+            color: #63563f;
+            font-size: 0.94rem;
+        }
+
+        /* FAQ 样式 */
+        .faq-wrap {
+            background: #f7f2e8;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        .faq-item {
+            background: #fffdf9;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-bottom: 14px;
+            border-left: 6px solid #b58d5a;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            color: #3e2f1c;
+            margin-bottom: 8px;
+        }
+        .faq-item p {
+            color: #5a4c38;
+            font-size: 0.95rem;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #2b2116;
+            color: #b9a68b;
+            padding: 40px 0 30px;
+            margin-top: 50px;
+            border-top: 6px solid #866f4e;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #e3cfa8;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            font-family: "Noto Serif SC", serif;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            padding: 6px 0;
+            font-size: 0.9rem;
+        }
+        .footer-col ul li a:hover {
+            color: #d9bc8c;
+        }
+        .copyright {
+            border-top: 1px solid #4a3b2a;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #8a7b64;
+        }
+
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .hero-illus {
+                height: 180px;
+            }
+            .feature-flex .illus-side {
+                flex: 1 1 100%;
+                height: 150px;
+                writing-mode: horizontal-tb;
+                letter-spacing: 2px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        @media (max-width: 600px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .logo-area h1 {
+                font-size: 1.5rem;
+            }
+            .header-info {
+                font-size: 0.75rem;
+            }
+            .nav-list li a {
+                padding: 10px 14px;
+                font-size: 0.9rem;
+            }
+            .hero-text h2 {
+                font-size: 1.8rem;
+            }
+            .feature-panel {
+                padding: 24px;
+            }
+            .story-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+    <!-- 头部 -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <h1>春满四合院</h1>
+                <p>庭院深深 · 春意融融</p>
+            </div>
+            <div class="header-info">老北京院落文化 · 现代生活温度</div>
+        </div>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">院落故事</a></li>
+                <li><a href="#">建筑之美</a></li>
+                <li><a href="#">改造案例</a></li>
+                <li><a href="#">生活志</a></li>
+                <li><a href="#">文化沙龙</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 首屏 Hero -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h2>春满四合院，一院藏春光</h2>
+                    <p>四合院不仅是建筑，更是一种温暖的人居哲学。在这里，看树影移动，听鸽哨掠过，感受四季更迭与邻里温情。我们专注于分享四合院的历史、修缮、改造与生活方式。</p>
+                    <div>
+                        <span class="hero-badge">🏮 传统格局</span>
+                        <span class="hero-badge">🌿 庭院生活</span>
+                        <span class="hero-badge">📖 人文记忆</span>
+                    </div>
+                </div>
+                <div class="hero-illus">
+                    春 满 四 合 院
+                    <span>· 方寸之间 自有天地 ·</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文章卡片区 -->
+        <div class="container">
+            <h2 class="section-title">今日院落漫谈</h2>
+            <p class="section-sub">从建筑细节到生活方式，记录四合院里的点滴春意</p>
+            <div class="card-grid">
+                <article class="card">
+                    <div class="card-img">🌳 庭院树木</div>
+                    <div class="card-content">
+                        <h3>四合院中的树影年轮</h3>
+                        <p>老话说“前不栽桑，后不栽柳”，院中种树有讲究。海棠、丁香、石榴……一棵树往往陪伴几代人。</p>
+                        <span class="card-tag">院落植物</span>
+                        <span class="card-tag">风水习俗</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-img">🧱 砖瓦之间</div>
+                    <div class="card-content">
+                        <h3>磨砖对缝的工艺之美</h3>
+                        <p>青砖灰瓦，影壁门楼。传统营造技艺如何让四合院历经百年风雨而依然挺立。</p>
+                        <span class="card-tag">建筑工艺</span>
+                        <span class="card-tag">传统营造</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-img">🍵 春日茶事</div>
+                    <div class="card-content">
+                        <h3>廊下煮茶，不负春光</h3>
+                        <p>在四合院里，春天最适合在廊下摆一方茶席。听风、看书、会友，享受慢时光。</p>
+                        <span class="card-tag">生活美学</span>
+                        <span class="card-tag">庭院活动</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-img">🚪 垂花门</div>
+                    <div class="card-content">
+                        <h3>垂花门内外的讲究</h3>
+                        <p>四合院的门楼是脸面，垂花门更是内外之界。了解门的等级与装饰，读懂旧时礼序。</p>
+                        <span class="card-tag">建筑形制</span>
+                        <span class="card-tag">文化符号</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-img">🛠️ 改造新生</div>
+                    <div class="card-content">
+                        <h3>老院子现代改造实录</h3>
+                        <p>保留木结构、恢复窗棂，同时引入地暖与卫浴。老四合院如何适应现代生活？</p>
+                        <span class="card-tag">改造案例</span>
+                        <span class="card-tag">设计思路</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-img">👨‍👩‍👧‍👦 邻里烟火</div>
+                    <div class="card-content">
+                        <h3>大院里的温暖日常</h3>
+                        <p>曾经的“大杂院”生活虽然拥挤，却充满人情味。几家人分享一个院子，是独特的城市记忆。</p>
+                        <span class="card-tag">人文故事</span>
+                        <span class="card-tag">市井回忆</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- 特色专栏 -->
+        <div class="container">
+            <div class="feature-panel">
+                <div class="feature-flex">
+                    <div class="text-side">
+                        <h2>春满四合院 · 不只是建筑</h2>
+                        <p>我们相信，四合院承载着中国人对“家”的理想图景：上有天，下有地，中间是和睦的家人与邻居。春来海棠花开，夏日槐荫满地，秋天枣儿熟了，冬雪覆盖屋脊。</p>
+                        <ul class="feature-list">
+                            <li>解读院落格局与居住智慧</li>
+                            <li>记录老街坊的真实故事</li>
+                            <li>提供老房修缮与改造参考</li>
+                            <li>分享庭院中的节令风物</li>
+                        </ul>
+                    </div>
+                    <div class="illus-side">
+                        院<br>有<br>春<br>光
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 深度故事 -->
+        <div class="container">
+            <h2 class="section-title">院落故事 · 人间烟火</h2>
+            <div class="story-list">
+                <div class="story-item">
+                    <div class="story-date">春 · 二月</div>
+                    <div class="story-info">
+                        <h3>枣树发芽了，邻居送来了香椿</h3>
+                        <p>老张家的香椿树每年春天都格外慷慨，整个院子都飘着香气。大家互相送着刚摘下的嫩芽，这就是院子的情谊。</p>
+                    </div>
+                </div>
+                <div class="story-item">
+                    <div class="story-date">春 · 三月</div>
+                    <div class="story-info">
+                        <h3>修屋顶的老匠人</h3>
+                        <p>六十岁的赵师傅说，现在愿意学传统苫背手艺的年轻人越来越少了。他最大的心愿就是把这门手艺传下去。</p>
+                    </div>
+                </div>
+                <div class="story-item">
+                    <div class="story-date">春 · 四月</div>
+                    <div class="story-info">
+                        <h3>从大杂院到新式合院</h3>
+                        <p>曾经住过十几户人家的大杂院，如今经过修缮，变成几户共享庭院的现代合院。形式变了，但那种“推门见邻”的温度还在。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 部分 -->
+        <div class="container">
+            <div class="faq-wrap">
+                <h2 class="section-title" style="margin-top:0;">关于四合院的常见问题</h2>
+                <div class="faq-item">
+                    <h3>“春满四合院”是指一个特定的院子吗？</h3>
+                    <p>更多是一种意象与情怀——春天降临在古老的院落中，也代表我们内心对传统院落生活的向往与记录。我们分享的是所有关于四合院文化与生活的方方面面。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>四合院的“春”体现在哪些地方？</h3>
+                    <p>春天是四合院最美的季节：海棠、丁香、紫藤次第开放，燕子归来筑巢。气温回升后，人们也愿意在院中活动，整个院子都活络起来。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>想了解四合院改造，从哪里开始？</h3>
+                    <p>建议先明确需求：是自住、会所还是文化空间？之后需要考察房屋现状、历史保护要求（如是否在保护区内），再寻找有传统建筑修缮经验的设计团队。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>四合院适合现代家庭居住吗？</h3>
+                    <p>经过合理改造（增加保温、现代厨卫、地暖等），四合院完全可以舒适居住。更重要的是它提供了难得的庭院空间，对儿童成长和老人休养都有益处。</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size:0.9rem; line-height:1.8;">春满四合院是一个专注于传统院落建筑、人文历史与现代生活融合的内容平台。我们相信建筑是生活的容器，而院子承载着中国人对自然与亲情最朴素的眷恋。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>热门栏目</h4>
+                    <ul>
+                        <li><a href="#">院落建筑指南</a></li>
+                        <li><a href="#">修缮与改造</a></li>
+                        <li><a href="#">庭院生活美学</a></li>
+                        <li><a href="#">老北京记忆</a></li>
+                        <li><a href="#">节气风物</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">传统建筑研究</a></li>
+                        <li><a href="#">胡同文化志</a></li>
+                        <li><a href="#">古建工匠联盟</a></li>
+                        <li><a href="#">城市更新观察</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 春满四合院 · 一院春风，满庭暖意。本网站内容仅供文化分享。
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
